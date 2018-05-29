@@ -19,8 +19,25 @@ public class Main {
         audi.fuelUp();
         audi.changeModel("Audi");
         audi.changeConsumption(20);
-        audi.travel(20);
+        
+        
         audi.printMainAttributes();
-
+        audi.travel(3);
+        audi.printMainAttributes();
+        audi.travel(3);
+        audi.printMainAttributes();
+     
+        audi.getIn();
+         audi.printMainAttributes();
+        audi.getIn();
+         audi.printMainAttributes();
+         audi.getIn();
+         audi.printMainAttributes();
+         audi.getIn();
+         audi.printMainAttributes();
+         audi.getIn();
+         audi.printMainAttributes();
+         
+      
     }
 }
