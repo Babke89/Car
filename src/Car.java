@@ -9,6 +9,7 @@ public class Car {
     char condition = 'A';
     double currentPrice = 3000;
     int mileagePassed = 50000;
+    int numberOfPassengers = 5;
 
     String model;
     int maxFuel;
@@ -23,7 +24,7 @@ public class Car {
         this.currentFuel = 0;
         this.maxFuel = 100;
         this.currentPassengers = 1;
-        this.maxPassengers = 5;
+
     }
 
     public Car(int maxSpeed, int minSpeed, double weight, boolean isTheCarOn,
@@ -123,17 +124,33 @@ public class Car {
         }
 
     }
-    
-    public void getIn(int numberOfPassengers){
-    
+
+    public void getIn(int numberOfPassengers) {
+
+        if (this.currentPassengers + numberOfPassengers <= this.maxPassengers) {
+            this.currentPassengers = this.currentPassengers + numberOfPassengers;
+
+            System.out.println("Uslo " + numberOfPassengers + ",trenutno putnika" + this.currentPassengers + "\n");
+
+        } else {
+
+            System.out.println("Nema mesta za" + numberOfPassengers + " putnika. Slobodnih mesta: " + (this.maxPassengers - currentPassengers));
+
+        }
+
     }
-    
-    public void getOut(int numberOfPassengers){
-    
-    }
-    
-    public void changeMaxPassengers(int newMax){
-    this.maxPassengers = newMax;
+
+    public void getOut(int numberOfPassengers) {
+        if (this.currentPassengers >= numberOfPassengers) {
+            this.currentPassengers = this.currentPassengers - numberOfPassengers;
+
+            System.out.println("Izaslo je" + numberOfPassengers + ",preostalo putnika je " + this.currentPassengers);
+
+        } else {
+            
+            System.out.println("Nema toliko putnika u automobilu.");
+
+        }
     }
 }
 
